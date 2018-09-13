@@ -1,5 +1,8 @@
 package com.projekty;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -38,6 +41,28 @@ public class Main {
 
         String supplierResult = iLoveJava.get();
         System.out.println(supplierResult);
+
+
+        List<String> topNames2015 = Arrays.asList(
+                "Amelia",
+                "Olivia",
+                "emily",
+                "Isla",
+                "Ava",
+                "oliver",
+                "Jack",
+                "Charlie",
+                "harry",
+                "Jacob"
+        );
+
+        List<String> firstUpperCase = new ArrayList<>();
+        topNames2015.forEach(name ->
+                firstUpperCase.add(name.substring(0,1).toUpperCase() + name.substring(1))
+        );
+        firstUpperCase.sort((s1, s2) -> s1.compareTo(s2));
+        firstUpperCase.forEach(s -> System.out.println());
+
     }
 
     private static String everySecondCharacter(Function<String, String> lambdaFunction, String argument){
