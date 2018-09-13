@@ -1,6 +1,7 @@
 package com.projekty;
 
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 public class Main {
 
@@ -30,6 +31,13 @@ public class Main {
 //        System.out.println(lambdaFunction.apply("1234567890"));
 
         System.out.println(everySecondCharacter(lambdaFunction, "1234567890"));
+
+        Supplier<String> iLoveJava = () ->{
+          return "I Love Java";
+        };
+
+        String supplierResult = iLoveJava.get();
+        System.out.println(supplierResult);
     }
 
     private static String everySecondCharacter(Function<String, String> lambdaFunction, String argument){
