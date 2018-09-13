@@ -66,8 +66,9 @@ public class Main {
 
         topNames2015.stream()
                 .map(name -> name.substring(0,1).toUpperCase() + name.substring(1))
+                .peek(System.out::println)
                 .sorted(String::compareTo)
-                .forEach(System.out::println);
+                .count();
 
         long numberOfNames = topNames2015.stream()
                 .map(name -> name.substring(0,1).toUpperCase() + name.substring(1))
