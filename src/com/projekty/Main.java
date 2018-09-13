@@ -27,6 +27,12 @@ public class Main {
             return returnVal.toString();
         };
 
-        System.out.println(lambdaFunction.apply("1234567890"));
+//        System.out.println(lambdaFunction.apply("1234567890"));
+
+        System.out.println(everySecondCharacter(lambdaFunction, "1234567890"));
+    }
+
+    private static String everySecondCharacter(Function<String, String> lambdaFunction, String argument){
+        return lambdaFunction.apply(argument);
     }
 }
