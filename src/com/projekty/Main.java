@@ -53,15 +53,31 @@ public class Main {
                 "Jack",
                 "Charlie",
                 "harry",
+                "amy",
                 "Jacob"
         );
 
         List<String> firstUpperCase = new ArrayList<>();
-        topNames2015.forEach(name ->
-                firstUpperCase.add(name.substring(0,1).toUpperCase() + name.substring(1))
-        );
-        firstUpperCase.sort(String::compareTo);
-        firstUpperCase.forEach(System.out::println);
+//        topNames2015.forEach(name ->
+//                firstUpperCase.add(name.substring(0,1).toUpperCase() + name.substring(1))
+//        );
+//        firstUpperCase.sort(String::compareTo);
+//        firstUpperCase.forEach(System.out::println);
+
+        topNames2015.stream()
+                .map(name -> name.substring(0,1).toUpperCase() + name.substring(1))
+                .sorted(String::compareTo)
+                .forEach(System.out::println);
+
+        long numberOfNames = topNames2015.stream()
+                .map(name -> name.substring(0,1).toUpperCase() + name.substring(1))
+                .filter(name -> name.substring(0,1).equals("A"))
+                .count();
+
+        System.out.println("Number of names beginning with \"A\" is " + numberOfNames);
+
+
+
 
     }
 
