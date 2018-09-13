@@ -60,8 +60,8 @@ public class Main {
         topNames2015.forEach(name ->
                 firstUpperCase.add(name.substring(0,1).toUpperCase() + name.substring(1))
         );
-        firstUpperCase.sort((s1, s2) -> s1.compareTo(s2));
-        firstUpperCase.forEach(s -> System.out.println());
+        firstUpperCase.sort(String::compareTo);
+        firstUpperCase.forEach(System.out::println);
 
     }
 
